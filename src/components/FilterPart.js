@@ -54,7 +54,7 @@ const FilterPart = (props) => {
 	const clearDates = useCallback(() => {
 		setFrom(undefined);
 		setTo(undefined);
-		props.setData(null);
+		props.setData(undefined);
 	}, []);
 
 	return (

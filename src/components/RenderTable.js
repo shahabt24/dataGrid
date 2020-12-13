@@ -67,7 +67,7 @@ const RenderTable = (props) => {
 
 	useEffect(() => {
 		getData(1);
-	}, [sort, pageSize]);
+	}, [sort, pageSize, dateData]);
 
 	const getData = (destPage, filters, dateFilter) => {
 		let lastFiltersData = filters ? filters : filterData;
@@ -184,10 +184,8 @@ const RenderTable = (props) => {
 			<div className="w-100 d-flex flex-column align-items-center justify-content-start flex-md-row justify-content-md-between">
 				<SearchBox searchValue={searchValue} searchData={searchData} changeValue={changeValue} />
 				<FilterPart headers={headers} setData={(data) => {
-					console.log(data);
 					setCurrentPage(1);
 					setDateData(data);
-					getData(1, null, data);
 				}} />
 			</div>
 			<div className="table-responsive">

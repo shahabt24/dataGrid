@@ -8,7 +8,6 @@ const FetchData = (filterData, searchValue, sort, currentPage, token, pageSize, 
 		'Authorization': 'Bearer ' + token,
 	};
 	let body = BodyGenerator(filterData, sort, searchValue, dateFilter);
-	console.log(body);
 	return axios.post(url, body,{headers})
 		.then((response) => {
 			return response.data;
